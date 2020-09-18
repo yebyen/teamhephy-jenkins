@@ -1,4 +1,4 @@
-.PHONY: fluxcd
+.PHONY: fluxcd helm-operator
 
 GIT_REPO := git@github.com:ndoit/empfin-jenkins.git
 
@@ -13,3 +13,8 @@ fluxcd:
 	    --set additionalArgs[0]="--git-verify-signatures-mode=first-parent" \
 	    --set git.signingKey=6CF0282ED43CEB0EFA5DA9335A88501AE567254E
 
+helm-operator:
+	helm upgrade -i helm-operator fluxcd/helm-operator \
+	    --namespace fluxcd \
+	    --set git.ssh.secretName=flux-git-deploy \
+	    --set helm.versions=v3
