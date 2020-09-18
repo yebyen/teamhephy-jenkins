@@ -9,3 +9,12 @@ spec:
     repository: https://charts.jenkins.io
     name: jenkins
     version: 2.6.4
+  values:
+    master:
+      ingress:
+        enabled: "true"
+        apiVersion: "networking.k8s.io/v1"
+        hostName: "jenkins.oit.nd.edu"
+      persistence:
+        enabled: "true"
+      initializeOnce: "true"
