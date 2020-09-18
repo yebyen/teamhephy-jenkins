@@ -11,5 +11,11 @@ spec:
     version: 3.1.0
   values:
     controller:
+      kind: DaemonSet
       config:
         hsts: "false"
+      hostNetwork: "true"
+      daemonset:
+        useHostPort: "true"
+      service:
+        type: NodePort
