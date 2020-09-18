@@ -1,0 +1,14 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: kubeadm:kubelet-config-1.14
+  namespace: kube-system
+rules:
+  - apiGroups:
+      - ""
+    resourceNames:
+      - kubelet-config-1.14
+    resources:
+      - configmaps
+    verbs:
+      - get
