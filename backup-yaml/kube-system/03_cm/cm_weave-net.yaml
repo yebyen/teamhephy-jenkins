@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  annotations:
-    kube-peers.weave.works/peers: '{"Peers":[{"PeerName":"1a:28:64:f4:f5:b1","NodeName":"ip-172-22-84-238.ec2.internal"}]}'
-  name: weave-net
-  namespace: kube-system
