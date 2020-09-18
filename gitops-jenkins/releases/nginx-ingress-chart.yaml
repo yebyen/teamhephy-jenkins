@@ -1,0 +1,15 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: nginx-ingress
+  namespace: nginx-ingress
+spec:
+  chart:
+    repository: https://kubernetes-charts.storage.googleapis.com
+    name: nginx-ingress
+    version: 3.1.0
+  values:
+    controller:
+      config:
+        hsts: false
