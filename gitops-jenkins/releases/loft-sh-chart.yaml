@@ -17,6 +17,6 @@ spec:
     certIssuer:
       create: "false"
     ingress:
-      host: "loft.jenkins.oit.nd.edu"
+      host: "loft.teamhephy.info"
       tls:
         secret: loft-cert
