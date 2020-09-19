@@ -4,7 +4,7 @@ GIT_REPO := git@github.com:kingdonb/empfin-jenkins.git
 
 fluxcd:
 	helm upgrade -i flux fluxcd/flux \
-	    --namespace fluxcd \
+	    --namespace flux \
 	    --set git.url=$(GIT_REPO) \
 	    --set git.path="gitops-jenkins/releases\,gitops-jenkins/manifests" \
 	    --set git.branch=release \
@@ -15,6 +15,6 @@ fluxcd:
 
 helm-operator:
 	helm upgrade -i helm-operator fluxcd/helm-operator \
-	    --namespace fluxcd \
+	    --namespace flux \
 	    --set git.ssh.secretName=flux-git-deploy \
 	    --set helm.versions=v3
