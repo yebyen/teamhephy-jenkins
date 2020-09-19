@@ -1,20 +1,20 @@
 .PHONY: fluxcd helm-operator
 
-GIT_REPO := git@github.com:ndoit/empfin-jenkins.git
+GIT_REPO := git@github.com:kingdonb/empfin-jenkins.git
 
 fluxcd:
 	helm upgrade -i flux fluxcd/flux \
-	    --namespace fluxcd \
+	    --namespace flux \
 	    --set git.url=$(GIT_REPO) \
 	    --set git.path="gitops-jenkins/releases\,gitops-jenkins/manifests" \
 	    --set git.branch=release \
 	    --set gpgKeys.configMapName=flux-gpg-public-keys \
 	    --set gpgKeys.secretName=flux-gpg-signing-key \
 	    --set additionalArgs[0]="--git-verify-signatures-mode=first-parent" \
-	    --set git.signingKey=6CF0282ED43CEB0EFA5DA9335A88501AE567254E
+	    --set git.signingKey=6634687FCEDD8B215313827900B28B654B6427B7
 
 helm-operator:
 	helm upgrade -i helm-operator fluxcd/helm-operator \
-	    --namespace fluxcd \
+	    --namespace flux \
 	    --set git.ssh.secretName=flux-git-deploy \
 	    --set helm.versions=v3
