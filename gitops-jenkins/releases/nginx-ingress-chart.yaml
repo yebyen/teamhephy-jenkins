@@ -2,6 +2,8 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
+  annotations:
+    fluxcd.io/ignore: "true"
   name: nginx-ingress
   namespace: nginx-ingress
 spec:
