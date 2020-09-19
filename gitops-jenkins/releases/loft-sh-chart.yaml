@@ -1,0 +1,22 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  annotations:
+    fluxcd.io/ignore: "true"
+  name: loft
+  namespace: loft
+spec:
+  chart:
+    repository: https://charts.devspace.sh/
+    name: loft
+    version: 1.0.0
+  values:
+    admin:
+      username: admin
+    certIssuer:
+      create: "false"
+    ingress:
+      host: "loft.jenkins.oit.nd.edu"
+      tls:
+        secret: loft-cert
