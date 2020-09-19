@@ -1,6 +1,6 @@
 .PHONY: fluxcd helm-operator
 
-GIT_REPO := git@github.com:ndoit/empfin-jenkins.git
+GIT_REPO := git@github.com:kingdonb/empfin-jenkins.git
 
 fluxcd:
 	helm upgrade -i flux fluxcd/flux \
