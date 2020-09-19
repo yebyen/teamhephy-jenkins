@@ -11,7 +11,7 @@ fluxcd:
 	    --set gpgKeys.configMapName=flux-gpg-public-keys \
 	    --set gpgKeys.secretName=flux-gpg-signing-key \
 	    --set additionalArgs[0]="--git-verify-signatures-mode=first-parent" \
-	    --set git.signingKey=6CF0282ED43CEB0EFA5DA9335A88501AE567254E
+	    --set git.signingKey=6634687FCEDD8B215313827900B28B654B6427B7
 
 helm-operator:
 	helm upgrade -i helm-operator fluxcd/helm-operator \

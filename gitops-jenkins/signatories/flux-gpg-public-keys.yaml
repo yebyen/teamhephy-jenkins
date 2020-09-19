@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: flux-gpg-public-keys
-  namespace: fluxcd
+  namespace: flux
 data:
   flux.asc: |
     -----BEGIN PGP PUBLIC KEY BLOCK-----
