@@ -11,12 +11,14 @@ spec:
     version: 3.1.2
   values:
     controller:
+      jenkinsUrl: https://jenkins.teamhephy.info
       JCasC:
         securityRealm: |-
           local:
             allowsSignup: false
       ingress:
         enabled: "true"
+        paths: []
         apiVersion: "networking.k8s.io/v1"
         hostName: "jenkins.teamhephy.info"
         annotations:
