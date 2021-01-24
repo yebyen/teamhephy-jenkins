@@ -5,6 +5,7 @@ GIT_REPO := git@github.com:yebyen/teamhephy-jenkins.git
 fluxcd:
 	helm upgrade -i flux fluxcd/flux \
 	    --namespace flux \
+	    --set image.tag=1.21.1 \
 	    --set git.url=$(GIT_REPO) \
 	    --set git.path="gitops-jenkins/releases\,gitops-jenkins/manifests" \
 	    --set git.branch=release \
